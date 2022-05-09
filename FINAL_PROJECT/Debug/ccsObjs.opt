@@ -1,0 +1,1 @@
+"./7Segment.obj" "./ADC.obj" "./EEPROM.obj" "./RTC.obj" "./ST7735.obj" "./main.obj" "./menus.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./systick.obj" "./timer32.obj" "./timerA.obj" "./ultrasonicSensor.obj" "../msp432p401r.cmd" -llibc.a 

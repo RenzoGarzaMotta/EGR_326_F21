@@ -1,0 +1,1844 @@
+******************************************************************************
+                  TI ARM Linker Unix v20.2.5                   
+******************************************************************************
+>> Linked Mon Dec 13 13:49:39 2021
+
+OUTPUT FILE NAME:   <FINAL_PROJECT.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000fc15
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  000106cb  0002f935  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  00001a0a  0000e5f6  RW X
+  SRAM_DATA             20000000   00010000  00001a0a  0000e5f6  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000106d0   000106d0    r-x
+  00000000    00000000    000000e4   000000e4    r-- .intvecs
+  000000e4    000000e4    0000fc94   0000fc94    r-x .text
+  0000fd78    0000fd78    000008e3   000008e3    r-- .const
+  00010660    00010660    00000070   00000070    r-- .cinit
+20000000    20000000    0000180b   00000000    rw-
+  20000000    20000000    000017a7   00000000    rw- .bss
+  200017a8    200017a8    00000063   00000000    rw- .data
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000e4     
+                  00000000    000000e4     startup_msp432p401r_ccs.obj (.intvecs:retain)
+
+.text      0    000000e4    0000fc94     
+                  000000e4    00004f20     main.obj (.text)
+                  00005004    00003290     menus.obj (.text)
+                  00008294    00001b04     RTC.obj (.text)
+                  00009d98    000013d8     ST7735.obj (.text)
+                  0000b170    000013d0     EEPROM.obj (.text)
+                  0000c540    00000a4e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
+                  0000cf8e    00000002                                   : div0.asm.obj (.text)
+                  0000cf90    00000870     timerA.obj (.text)
+                  0000d800    00000570     timer32.obj (.text)
+                  0000dd70    00000440     7Segment.obj (.text)
+                  0000e1b0    00000378     system_msp432p401r.obj (.text)
+                  0000e528    0000028c     systick.obj (.text)
+                  0000e7b4    00000270     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_a)
+                  0000ea24    000001d0                                   : _printfi.c.obj (.text:_pconv_g)
+                  0000ebf4    000001b6                                   : fd_add_t2.asm.obj (.text)
+                  0000edaa    00000002     --HOLE-- [fill = 0]
+                  0000edac    0000013c                                   : _printfi.c.obj (.text:_pconv_e)
+                  0000eee8    00000136                                   : fd_div_t2.asm.obj (.text)
+                  0000f01e    00000002     --HOLE-- [fill = 0]
+                  0000f020    00000124                                   : _printfi.c.obj (.text:fcvt)
+                  0000f144    00000110                                   : s_scalbn.c.obj (.text:scalbn)
+                  0000f254    000000fc                                   : fd_mul_t2.asm.obj (.text)
+                  0000f350    000000b1                                   : _printfi.c.obj (.text:_ltostr)
+                  0000f401    00000001     --HOLE-- [fill = 0]
+                  0000f402    0000009c                                   : memcpy_t2.asm.obj (.text)
+                  0000f49e    00000002     --HOLE-- [fill = 0]
+                  0000f4a0    00000098     ultrasonicSensor.obj (.text)
+                  0000f538    00000096     rtsv7M4_T_le_v4SPD16_eabi.lib : ull_div_t2.asm.obj (.text)
+                  0000f5ce    00000002     --HOLE-- [fill = 0]
+                  0000f5d0    00000088     ADC.obj (.text)
+                  0000f658    00000086     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  0000f6de    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
+                  0000f764    0000007a                                   : memset_t2.asm.obj (.text)
+                  0000f7de    0000006e                                   : _printfi.c.obj (.text:_mcpy)
+                  0000f84c    0000006e                                   : fd_tos_t2.asm.obj (.text)
+                  0000f8ba    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0000f922    00000002     --HOLE-- [fill = 0]
+                  0000f924    00000064                                   : s_frexp.c.obj (.text:frexp)
+                  0000f988    00000056                                   : _printfi.c.obj (.text:_pconv_f)
+                  0000f9de    00000054                                   : _ltoa.c.obj (.text:__TI_ltoa)
+                  0000fa32    00000052                                   : _printfi.c.obj (.text:_ecpy)
+                  0000fa84    0000004c                                   : atoi.c.obj (.text:atoi)
+                  0000fad0    00000048                                   : fd_toi_t2.asm.obj (.text)
+                  0000fb18    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  0000fb5c    00000040                                   : sprintf.c.obj (.text:sprintf)
+                  0000fb9c    0000003e                                   : _printfi.c.obj (.text:_fcpy)
+                  0000fbda    00000038                                   : fs_tod_t2.asm.obj (.text)
+                  0000fc12    00000002     --HOLE-- [fill = 0]
+                  0000fc14    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  0000fc48    0000002e                                   : i_tofd_t2.asm.obj (.text)
+                  0000fc76    00000020                                   : u_tofd_t2.asm.obj (.text)
+                  0000fc96    0000001c                                   : memccpy.c.obj (.text:memccpy)
+                  0000fcb2    0000001a                                   : s_copysign.c.obj (.text:copysign)
+                  0000fccc    00000018                                   : sprintf.c.obj (.text:_outs)
+                  0000fce4    00000016                                   : strchr.c.obj (.text:strchr)
+                  0000fcfa    00000014                                   : strcpy.c.obj (.text:strcpy)
+                  0000fd0e    00000014                                   : strlen.c.obj (.text:strlen)
+                  0000fd22    00000012                                   : wcslen.c.obj (.text:wcslen)
+                  0000fd34    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  0000fd42    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  0000fd50    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000fd5c    0000000a                                   : sprintf.c.obj (.text:_outc)
+                  0000fd66    00000002     --HOLE-- [fill = 0]
+                  0000fd68    00000008                                   : errno.c.obj (.text:__aeabi_errno_addr)
+                  0000fd70    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
+                  0000fd74    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    0000fd78    000008e3     
+                  0000fd78    000004fb     ST7735.obj (.const:.string:Font)
+                  00010273    00000200     ST7735.obj (.const:.string:dBfs)
+                  00010473    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  00010574    00000067     ST7735.obj (.const:.string:Bcmd)
+                  000105db    0000003b     ST7735.obj (.const:.string:Rcmd1)
+                  00010616    0000002b     ST7735.obj (.const:.string:Rcmd3)
+                  00010641    0000000d     ST7735.obj (.const:.string:Rcmd2green)
+                  0001064e    0000000d     ST7735.obj (.const:.string:Rcmd2red)
+
+.cinit     0    00010660    00000070     
+                  00010660    00000048     (.cinit..data.load) [load image, compression = lzss]
+                  000106a8    0000000c     (__TI_handler_table)
+                  000106b4    00000004     --HOLE-- [fill = 0]
+                  000106b8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000106c0    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.binit     0    00000000    00000000     
+
+.bss       0    20000000    000017a7     UNINITIALIZED
+                  20000000    000002e9     (.common:mainMenu)
+                  200002e9    000002e9     (.common:mainScreen)
+                  200005d2    000002e9     (.common:setAlarmsScreen)
+                  200008bb    000002e9     (.common:setDateScreen)
+                  20000ba4    000002e9     (.common:setPreferencesScreen)
+                  20000e8d    000002e9     (.common:setTimeScreen)
+                  20001176    000002e9     (.common:testingScreen)
+                  2000145f    00000001     (.common:A1F)
+                  20001460    00000040     (.common:hallRollingValues)
+                  200014a0    00000040     (.common:rollingValues)
+                  200014e0    00000034     (.common:readEEPROMData)
+                  20001514    00000034     (.common:sendEEPROMData)
+                  20001548    00000014     (.common:readData)
+                  2000155c    00000014     (.common:sendData)
+                  20001570    0000000c     (.common:Message)
+                  2000157c    0000000c     (.common:dayString)
+                  20001588    0000000c     (.common:scrollDayString)
+                  20001594    0000000c     (.common:scrollMonthString)
+                  200015a0    00000008     (.common:distCentimeter)
+                  200015a8    00000008     (.common:distMilli)
+                  200015b0    00000008     (.common:hallSum)
+                  200015b8    00000008     (.common:inchAverage)
+                  200015c0    00000008     (.common:meridiemString)
+                  200015c8    00000008     (.common:micro)
+                  200015d0    00000008     (.common:monthString)
+                  200015d8    00000008     (.common:rollingAverage)
+                  200015e0    00000008     (.common:rots)
+                  200015e8    00000008     (.common:rpmRollingAverage)
+                  200015f0    00000008     (.common:speedUnit)
+                  200015f8    00000008     (.common:sum)
+                  20001600    00000008     (.common:tempUnit)
+                  20001608    00000004     ST7735.obj (.bss)
+                  2000160c    00000004     (.common:Messageindex)
+                  20001610    00000004     (.common:X)
+                  20001614    00000004     (.common:Ymax)
+                  20001618    00000004     (.common:Ymin)
+                  2000161c    00000004     (.common:Yrange)
+                  20001620    00000004     (.common:ambientLight)
+                  20001624    00000004     (.common:celsius)
+                  20001628    00000004     (.common:circumference)
+                  2000162c    00000004     (.common:countForOdometer)
+                  20001630    00000004     (.common:currentEdge)
+                  20001634    00000004     (.common:delisle)
+                  20001638    00000004     (.common:deltaCycles)
+                  2000163c    00000004     (.common:encoderCount)
+                  20001640    00000004     (.common:fahrenheit)
+                  20001644    00000004     (.common:feetPerSec)
+                  20001648    00000004     (.common:hallCurrentEdge)
+                  2000164c    00000004     (.common:hallDeltaCycles)
+                  20001650    00000004     (.common:hallLastEdge)
+                  20001654    00000004     (.common:kelvin)
+                  20001658    00000004     (.common:kmPerHour)
+                  2000165c    00000004     (.common:knot)
+                  20001660    00000004     (.common:lastEdge)
+                  20001664    00000004     (.common:metersPerSec)
+                  20001668    00000004     (.common:milesPerHour)
+                  2000166c    00000004     (.common:newOdometer)
+                  20001670    00000004     (.common:newton)
+                  20001674    00000004     (.common:odometer)
+                  20001678    00000004     (.common:odometerRemainder)
+                  2000167c    00000004     (.common:oldOdometer)
+                  20001680    00000004     (.common:reaumur)
+                  20001684    00000004     (.common:renkine)
+                  20001688    00000004     (.common:romer)
+                  2000168c    00000004     (.common:rotCount)
+                  20001690    00000004     (.common:speedDisp)
+                  20001694    00000004     (.common:tempDec)
+                  20001698    00000004     (.common:tempDisp)
+                  2000169c    00000004     (.common:tempLSB)
+                  200016a0    00000004     (.common:tempMSB)
+                  200016a4    00000004     (.common:temperature)
+                  200016a8    00000002     (.common:bgColor)
+                  200016aa    00000002     (.common:currentLocation)
+                  200016ac    00000002     (.common:currentLocation2)
+                  200016ae    00000002     (.common:engageMotor)
+                  200016b0    00000002     (.common:engageMotor2)
+                  200016b2    00000002     (.common:highlightedColor)
+                  200016b4    00000002     (.common:moveSteps)
+                  200016b6    00000002     (.common:moveSteps2)
+                  200016b8    00000002     (.common:newYear)
+                  200016ba    00000002     (.common:threeDig)
+                  200016bc    00000002     (.common:twoDig)
+                  200016be    00000002     (.common:year)
+                  200016c0    00000001     (.common:A1IE)
+                  200016c1    00000001     (.common:A2F)
+                  200016c2    00000001     (.common:A2IE)
+                  200016c3    00000001     (.common:BBSQW)
+                  200016c4    00000001     (.common:BSY)
+                  200016c5    00000001     (.common:CCWsteps)
+                  200016c6    00000001     (.common:CCWsteps2)
+                  200016c7    00000001     (.common:CONV)
+                  200016c8    00000001     (.common:CWsteps)
+                  200016c9    00000001     (.common:CWsteps2)
+                  200016ca    00000001     (.common:EN32kHz)
+                  200016cb    00000001     (.common:EOSC)
+                  200016cc    00000001     (.common:INTCN)
+                  200016cd    00000001     (.common:OSF)
+                  200016ce    00000001     (.common:RS1)
+                  200016cf    00000001     (.common:RS2)
+                  200016d0    00000001     (.common:agingOffset)
+                  200016d1    00000001     (.common:alarm1Flag)
+                  200016d2    00000001     (.common:alarm2Flag)
+                  200016d3    00000001     (.common:appearanceEEPROM)
+                  200016d4    00000001     (.common:bgColorEEPROM)
+                  200016d5    00000001     (.common:bitA1M1)
+                  200016d6    00000001     (.common:bitA1M2)
+                  200016d7    00000001     (.common:bitA1M3)
+                  200016d8    00000001     (.common:bitA1M4)
+                  200016d9    00000001     (.common:bitA2M2)
+                  200016da    00000001     (.common:bitA2M3)
+                  200016db    00000001     (.common:bitA2M4)
+                  200016dc    00000001     (.common:brightnessEEPROM)
+                  200016dd    00000001     (.common:cancelA1)
+                  200016de    00000001     (.common:cancelA2)
+                  200016df    00000001     (.common:century)
+                  200016e0    00000001     (.common:clockSetting)
+                  200016e1    00000001     (.common:clockSettingA1)
+                  200016e2    00000001     (.common:clockSettingA2)
+                  200016e3    00000001     (.common:currentSpeedUnitSelection)
+                  200016e4    00000001     (.common:currentTempSelection)
+                  200016e5    00000001     (.common:customFlag)
+                  200016e6    00000001     (.common:date)
+                  200016e7    00000001     (.common:dateA1)
+                  200016e8    00000001     (.common:dateA2)
+                  200016e9    00000001     (.common:day)
+                  200016ea    00000001     (.common:day1)
+                  200016eb    00000001     (.common:day2)
+                  200016ec    00000001     (.common:day3)
+                  200016ed    00000001     (.common:day4)
+                  200016ee    00000001     (.common:day5)
+                  200016ef    00000001     (.common:day6)
+                  200016f0    00000001     (.common:dayA1)
+                  200016f1    00000001     (.common:dayA2)
+                  200016f2    00000001     (.common:dayDateSelectBitA1)
+                  200016f3    00000001     (.common:dayDateSelectBitA2)
+                  200016f4    00000001     (.common:digitFlag)
+                  200016f5    00000001     (.common:engaged)
+                  200016f6    00000001     (.common:entry1)
+                  200016f7    00000001     (.common:entry2)
+                  200016f8    00000001     (.common:entry3)
+                  200016f9    00000001     (.common:entry4)
+                  200016fa    00000001     (.common:entry5)
+                  200016fb    00000001     (.common:entry6)
+                  200016fc    00000001     (.common:hour1)
+                  200016fd    00000001     (.common:hour2)
+                  200016fe    00000001     (.common:hour3)
+                  200016ff    00000001     (.common:hour4)
+                  20001700    00000001     (.common:hour5)
+                  20001701    00000001     (.common:hour6)
+                  20001702    00000001     (.common:hourScroll)
+                  20001703    00000001     (.common:hours)
+                  20001704    00000001     (.common:hoursA1)
+                  20001705    00000001     (.common:hoursA2)
+                  20001706    00000001     (.common:lastSecBlink)
+                  20001707    00000001     (.common:lastSeconds)
+                  20001708    00000001     (.common:meridiem)
+                  20001709    00000001     (.common:meridiemA1)
+                  2000170a    00000001     (.common:meridiemA2)
+                  2000170b    00000001     (.common:meridiemScroll)
+                  2000170c    00000001     (.common:minute1)
+                  2000170d    00000001     (.common:minute2)
+                  2000170e    00000001     (.common:minute3)
+                  2000170f    00000001     (.common:minute4)
+                  20001710    00000001     (.common:minute5)
+                  20001711    00000001     (.common:minute6)
+                  20001712    00000001     (.common:minuteScroll)
+                  20001713    00000001     (.common:minutes)
+                  20001714    00000001     (.common:minutesA1)
+                  20001715    00000001     (.common:minutesA2)
+                  20001716    00000001     (.common:month)
+                  20001717    00000001     (.common:month1)
+                  20001718    00000001     (.common:month2)
+                  20001719    00000001     (.common:month3)
+                  2000171a    00000001     (.common:month4)
+                  2000171b    00000001     (.common:month5)
+                  2000171c    00000001     (.common:month6)
+                  2000171d    00000001     (.common:newA1F)
+                  2000171e    00000001     (.common:newA1IE)
+                  2000171f    00000001     (.common:newA2F)
+                  20001720    00000001     (.common:newA2IE)
+                  20001721    00000001     (.common:newAgingOffset)
+                  20001722    00000001     (.common:newAppearance)
+                  20001723    00000001     (.common:newBBSQW)
+                  20001724    00000001     (.common:newBSY)
+                  20001725    00000001     (.common:newBgColor)
+                  20001726    00000001     (.common:newBitA1M1)
+                  20001727    00000001     (.common:newBitA1M2)
+                  20001728    00000001     (.common:newBitA1M3)
+                  20001729    00000001     (.common:newBitA1M4)
+                  2000172a    00000001     (.common:newBitA2M2)
+                  2000172b    00000001     (.common:newBitA2M3)
+                  2000172c    00000001     (.common:newBitA2M4)
+                  2000172d    00000001     (.common:newBrightness)
+                  2000172e    00000001     (.common:newCONV)
+                  2000172f    00000001     (.common:newCentury)
+                  20001730    00000001     (.common:newClockSetting)
+                  20001731    00000001     (.common:newClockSettingA1)
+                  20001732    00000001     (.common:newClockSettingA2)
+                  20001733    00000001     (.common:newDate)
+                  20001734    00000001     (.common:newDateA1)
+                  20001735    00000001     (.common:newDateA2)
+                  20001736    00000001     (.common:newDay)
+                  20001737    00000001     (.common:newDay1)
+                  20001738    00000001     (.common:newDay2)
+                  20001739    00000001     (.common:newDay3)
+                  2000173a    00000001     (.common:newDay4)
+                  2000173b    00000001     (.common:newDay5)
+                  2000173c    00000001     (.common:newDay6)
+                  2000173d    00000001     (.common:newDayA1)
+                  2000173e    00000001     (.common:newDayA2)
+                  2000173f    00000001     (.common:newDayDateSelectBitA1)
+                  20001740    00000001     (.common:newDayDateSelectBitA2)
+                  20001741    00000001     (.common:newEN32kHz)
+                  20001742    00000001     (.common:newEOSC)
+                  20001743    00000001     (.common:newEntry1)
+                  20001744    00000001     (.common:newEntry2)
+                  20001745    00000001     (.common:newEntry3)
+                  20001746    00000001     (.common:newEntry4)
+                  20001747    00000001     (.common:newEntry5)
+                  20001748    00000001     (.common:newEntry6)
+                  20001749    00000001     (.common:newHour1)
+                  2000174a    00000001     (.common:newHour2)
+                  2000174b    00000001     (.common:newHour3)
+                  2000174c    00000001     (.common:newHour4)
+                  2000174d    00000001     (.common:newHour5)
+                  2000174e    00000001     (.common:newHour6)
+                  2000174f    00000001     (.common:newHours)
+                  20001750    00000001     (.common:newHoursA1)
+                  20001751    00000001     (.common:newHoursA2)
+                  20001752    00000001     (.common:newINTCN)
+                  20001753    00000001     (.common:newMeridiem)
+                  20001754    00000001     (.common:newMeridiemA1)
+                  20001755    00000001     (.common:newMeridiemA2)
+                  20001756    00000001     (.common:newMinute1)
+                  20001757    00000001     (.common:newMinute2)
+                  20001758    00000001     (.common:newMinute3)
+                  20001759    00000001     (.common:newMinute4)
+                  2000175a    00000001     (.common:newMinute5)
+                  2000175b    00000001     (.common:newMinute6)
+                  2000175c    00000001     (.common:newMinutes)
+                  2000175d    00000001     (.common:newMinutesA1)
+                  2000175e    00000001     (.common:newMinutesA2)
+                  2000175f    00000001     (.common:newMonth)
+                  20001760    00000001     (.common:newMonth1)
+                  20001761    00000001     (.common:newMonth2)
+                  20001762    00000001     (.common:newMonth3)
+                  20001763    00000001     (.common:newMonth4)
+                  20001764    00000001     (.common:newMonth5)
+                  20001765    00000001     (.common:newMonth6)
+                  20001766    00000001     (.common:newOSF)
+                  20001767    00000001     (.common:newRS1)
+                  20001768    00000001     (.common:newRS2)
+                  20001769    00000001     (.common:newSecond1)
+                  2000176a    00000001     (.common:newSecond2)
+                  2000176b    00000001     (.common:newSecond3)
+                  2000176c    00000001     (.common:newSecond4)
+                  2000176d    00000001     (.common:newSecond5)
+                  2000176e    00000001     (.common:newSecond6)
+                  2000176f    00000001     (.common:newSeconds)
+                  20001770    00000001     (.common:newSecondsA1)
+                  20001771    00000001     (.common:newSign)
+                  20001772    00000001     (.common:newSpeedUnits)
+                  20001773    00000001     (.common:newTempUnits)
+                  20001774    00000001     (.common:newTextColor)
+                  20001775    00000001     (.common:prevDigitFlag)
+                  20001776    00000001     (.common:scrollA1Date)
+                  20001777    00000001     (.common:scrollA1Hour)
+                  20001778    00000001     (.common:scrollA1Meridiem)
+                  20001779    00000001     (.common:scrollA1Minute)
+                  2000177a    00000001     (.common:scrollA1Second)
+                  2000177b    00000001     (.common:scrollA2Date)
+                  2000177c    00000001     (.common:scrollA2Hour)
+                  2000177d    00000001     (.common:scrollA2Meridiem)
+                  2000177e    00000001     (.common:scrollA2Minute)
+                  2000177f    00000001     (.common:scrollA2Second)
+                  20001780    00000001     (.common:scrolling)
+                  20001781    00000001     (.common:second1)
+                  20001782    00000001     (.common:second2)
+                  20001783    00000001     (.common:second3)
+                  20001784    00000001     (.common:second4)
+                  20001785    00000001     (.common:second5)
+                  20001786    00000001     (.common:second6)
+                  20001787    00000001     (.common:seconds)
+                  20001788    00000001     (.common:secondsA1)
+                  20001789    00000001     (.common:selectedOption)
+                  2000178a    00000001     (.common:sign)
+                  2000178b    00000001     (.common:speedUnitsEEPROM)
+                  2000178c    00000001     (.common:tempUnitsEEPROM)
+                  2000178d    00000001     (.common:textColorEEPROM)
+                  2000178e    00000001     (.common:tooClose)
+                  2000178f    00000001     (.common:updateA1Date)
+                  20001790    00000001     (.common:updateA1Hour)
+                  20001791    00000001     (.common:updateA1Meridiem)
+                  20001792    00000001     (.common:updateA1Minute)
+                  20001793    00000001     (.common:updateA1Second)
+                  20001794    00000001     (.common:updateA2Date)
+                  20001795    00000001     (.common:updateA2Hour)
+                  20001796    00000001     (.common:updateA2Meridiem)
+                  20001797    00000001     (.common:updateA2Minute)
+                  20001798    00000001     (.common:updateAppearance)
+                  20001799    00000001     (.common:updateBGColor)
+                  2000179a    00000001     (.common:updateBrightness)
+                  2000179b    00000001     (.common:updateDate)
+                  2000179c    00000001     (.common:updateDay)
+                  2000179d    00000001     (.common:updateHour)
+                  2000179e    00000001     (.common:updateMeridiem)
+                  2000179f    00000001     (.common:updateMinutes)
+                  200017a0    00000001     (.common:updateMonth)
+                  200017a1    00000001     (.common:updateSpeedUnits)
+                  200017a2    00000001     (.common:updateTempUnits)
+                  200017a3    00000001     (.common:updateTextColor)
+                  200017a4    00000001     (.common:updateYear)
+                  200017a5    00000001     (.common:x)
+                  200017a6    00000001     (.common:y)
+
+.data      0    200017a8    00000063     UNINITIALIZED
+                  200017a8    0000002a     main.obj (.data)
+                  200017d2    00000002     menus.obj (.data)
+                  200017d4    00000014     ST7735.obj (.data)
+                  200017e8    00000007     timer32.obj (.data)
+                  200017ef    00000004     timer32.obj (.data:inA)
+                  200017f3    00000004     timer32.obj (.data:inAp)
+                  200017f7    00000004     timer32.obj (.data:inB)
+                  200017fb    00000004     timer32.obj (.data:inBp)
+                  200017ff    00000001     --HOLE--
+                  20001800    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.data)
+                  20001804    00000004     system_msp432p401r.obj (.data)
+                  20001808    00000003     timerA.obj (.data)
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2000fe04    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                        code    ro data   rw data
+       ------                        ----    -------   -------
+    ./
+       main.obj                      20256   0         11152  
+       menus.obj                     12944   0         78     
+       ST7735.obj                    5080    2018      112    
+       RTC.obj                       6916    0         0      
+       EEPROM.obj                    5072    0         856    
+       timerA.obj                    2160    0         6      
+       timer32.obj                   1392    0         78     
+       7Segment.obj                  1088    0         0      
+       system_msp432p401r.obj        888     0         8      
+       systick.obj                   652     0         0      
+       startup_msp432p401r_ccs.obj   14      228       0      
+       ultrasonicSensor.obj          152     0         0      
+       ADC.obj                       136     0         8      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        56750   2246      12298  
+                                                              
+    /Applications/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       _printfi.c.obj                4851    0         0      
+       fd_add_t2.asm.obj             438     0         0      
+       fd_div_t2.asm.obj             310     0         0      
+       s_scalbn.c.obj                272     0         0      
+       fd_cmp_t2.asm.obj             268     0         0      
+       ctype.c.obj                   0       257       0      
+       fd_mul_t2.asm.obj             252     0         0      
+       memcpy_t2.asm.obj             156     0         0      
+       ull_div_t2.asm.obj            150     0         0      
+       memset_t2.asm.obj             122     0         0      
+       fd_tos_t2.asm.obj             110     0         0      
+       copy_decompress_lzss.c.obj    104     0         0      
+       s_frexp.c.obj                 100     0         0      
+       sprintf.c.obj                 98      0         0      
+       _ltoa.c.obj                   84      0         0      
+       atoi.c.obj                    76      0         0      
+       fd_toi_t2.asm.obj             72      0         0      
+       autoinit.c.obj                68      0         0      
+       fs_tod_t2.asm.obj             56      0         0      
+       boot_cortex_m.c.obj           52      0         0      
+       i_tofd_t2.asm.obj             46      0         0      
+       u_tofd_t2.asm.obj             32      0         0      
+       memccpy.c.obj                 28      0         0      
+       s_copysign.c.obj              26      0         0      
+       strchr.c.obj                  22      0         0      
+       strcpy.c.obj                  20      0         0      
+       strlen.c.obj                  20      0         0      
+       wcslen.c.obj                  18      0         0      
+       errno.c.obj                   8       0         8      
+       copy_decompress_none.c.obj    14      0         0      
+       copy_zero_init.c.obj          12      0         0      
+       exit.c.obj                    4       0         0      
+       pre_init.c.obj                4       0         0      
+       div0.asm.obj                  2       0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        7895    257       8      
+                                                              
+       Stack:                        0       0         1024   
+       Linker Generated:             0       108       0      
+    +--+-----------------------------+-------+---------+---------+
+       Grand Total:                  64645   2611      13330  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000106c0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00010660, load size=00000048 bytes, run addr=200017a8, run size=00000063 bytes, compression=lzss
+	.bss: load addr=000106b8, load size=00000008 bytes, run addr=20000000, run size=000017a7 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000106a8 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+2000145f  A1F                           
+200016c0  A1IE                          
+200016c1  A2F                           
+200016c2  A2IE                          
+0000fd4f  ADC14_IRQHandler              
+0000fd4f  AES256_IRQHandler             
+200016c3  BBSQW                         
+200016c4  BSY                           
+0000fd4f  BusFault_Handler              
+0000fd75  C$$EXIT                       
+200017c8  CCW                           
+200017bf  CCWflag                       
+200016c5  CCWsteps                      
+200016c6  CCWsteps2                     
+0000fd4f  COMP_E0_IRQHandler            
+0000fd4f  COMP_E1_IRQHandler            
+200016c7  CONV                          
+0000fd4f  CS_IRQHandler                 
+200017c4  CW                            
+200017be  CWflag                        
+200016c8  CWsteps                       
+200016c9  CWsteps2                      
+0000fd4f  DMA_ERR_IRQHandler            
+0000fd4f  DMA_INT0_IRQHandler           
+0000fd4f  DMA_INT1_IRQHandler           
+0000fd4f  DMA_INT2_IRQHandler           
+0000fd4f  DMA_INT3_IRQHandler           
+0000fd4f  DebugMon_Handler              
+0000fd4f  Default_Handler               
+00009e0f  Delay1ms                      
+200016ca  EN32kHz                       
+200016cb  EOSC                          
+0000fd4f  EUSCIA0_IRQHandler            
+0000fd4f  EUSCIA1_IRQHandler            
+0000fd4f  EUSCIA2_IRQHandler            
+0000fd4f  EUSCIA3_IRQHandler            
+0000fd4f  EUSCIB0_IRQHandler            
+0000fd4f  EUSCIB1_IRQHandler            
+0000fd4f  EUSCIB2_IRQHandler            
+0000fd4f  EUSCIB3_IRQHandler            
+0000fd4f  FLCTL_IRQHandler              
+0000fd4f  FPU_IRQHandler                
+0000fd4f  HardFault_Handler             
+0000b1e7  I2C1_Read                     
+0000b171  I2C1_Write                    
+200016cc  INTCN                         
+0000fd4f  MemManage_Handler             
+20001570  Message                       
+2000160c  Messageindex                  
+0000fd4f  NMI_Handler                   
+200016cd  OSF                           
+0000b10f  Output_Clear                  
+0000b129  Output_Color                  
+0000b0ff  Output_Init                   
+0000b119  Output_Off                    
+0000b121  Output_On                     
+0000fd4f  PCM_IRQHandler                
+0000fd4f  PORT1_IRQHandler              
+00004915  PORT2_IRQHandler              
+00004915  PORT2_IRQHandler              
+0000fd4f  PORT3_IRQHandler              
+0000fd4f  PORT4_IRQHandler              
+0000fd4f  PORT5_IRQHandler              
+0000fd4f  PORT6_IRQHandler              
+0000fd4f  PSS_IRQHandler                
+0000fd4f  PendSV_Handler                
+200016ce  RS1                           
+200016cf  RS2                           
+0000fd4f  RTC_C_IRQHandler              
+0000fd43  Reset_Handler                 
+0000a3f1  ST7735_Color565               
+0000a455  ST7735_DrawBitmap             
+0000a7c9  ST7735_DrawChar               
+0000a653  ST7735_DrawCharS              
+0000a1e9  ST7735_DrawFastHLine          
+0000a12b  ST7735_DrawFastVLine          
+0000a0d1  ST7735_DrawPixel              
+0000a941  ST7735_DrawString             
+0000a2e5  ST7735_FillRect               
+0000a2a1  ST7735_FillScreen             
+00009f9d  ST7735_InitB                  
+00009fbd  ST7735_InitR                  
+0000ab9b  ST7735_InvertDisplay          
+0000afd9  ST7735_OutChar                
+0000b0a1  ST7735_OutString              
+0000aa45  ST7735_OutUDec                
+0000aee5  ST7735_PlotBar                
+0000abb3  ST7735_PlotClear              
+0000acd5  ST7735_PlotLine               
+0000af85  ST7735_PlotNext               
+0000af9f  ST7735_PlotNextErase          
+0000ac0f  ST7735_PlotPoint              
+0000ae0f  ST7735_PlotPoints             
+0000af3b  ST7735_PlotdBfs               
+0000aa1b  ST7735_SetCursor              
+0000aad1  ST7735_SetRotation            
+0000b0bf  ST7735_SetTextColor           
+0000a425  ST7735_SwapColor              
+0000fd4f  SVC_Handler                   
+200017dc  StTextColor                   
+200017d4  StX                           
+200017d8  StY                           
+0000fd4f  SysTick_Handler               
+20001804  SystemCoreClock               
+0000e1b1  SystemCoreClockUpdate         
+0000e429  SystemInit                    
+0000db9d  T32_INT1_IRQHandler           
+0000db9d  T32_INT1_IRQHandler           
+0000d9b7  T32_INT2_IRQHandler           
+0000d9b7  T32_INT2_IRQHandler           
+0000fd4f  T32_INTC_IRQHandler           
+0000fd4f  TA0_0_IRQHandler              
+00004965  TA0_N_IRQHandler              
+00004965  TA0_N_IRQHandler              
+0000fd4f  TA1_0_IRQHandler              
+0000fd4f  TA1_N_IRQHandler              
+0000fd4f  TA2_0_IRQHandler              
+0000fd4f  TA2_N_IRQHandler              
+0000fd4f  TA3_0_IRQHandler              
+00004a99  TA3_N_IRQHandler              
+00004a99  TA3_N_IRQHandler              
+0000fd4f  UsageFault_Handler            
+4000480c  WDTCTL_SYM                    
+0000fd4f  WDT_A_IRQHandler              
+20001610  X                             
+20001614  Ymax                          
+20001618  Ymin                          
+2000161c  Yrange                        
+20010000  __STACK_END                   
+00000200  __STACK_SIZE                  
+000106c0  __TI_CINIT_Base               
+000106d0  __TI_CINIT_Limit              
+000106a8  __TI_Handler_Table_Base       
+000106b4  __TI_Handler_Table_Limit      
+0000fb19  __TI_auto_init_nobinit_nopinit
+0000f8bb  __TI_decompress_lzss          
+0000fd35  __TI_decompress_none          
+0000f9df  __TI_ltoa                     
+ffffffff  __TI_pprof_out_hndl           
+0000c541  __TI_printfi                  
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+0000fd51  __TI_zero_init                
+0000f659  __aeabi_cdcmpeq               
+0000f659  __aeabi_cdcmple               
+0000f6df  __aeabi_cdrcmple              
+0000f84d  __aeabi_d2f                   
+0000fad1  __aeabi_d2iz                  
+0000ebff  __aeabi_dadd                  
+0000eee9  __aeabi_ddiv                  
+0000f255  __aeabi_dmul                  
+0000ebf5  __aeabi_dsub                  
+0000fd69  __aeabi_errno_addr            
+0000fbdb  __aeabi_f2d                   
+0000fc49  __aeabi_i2d                   
+0000cf8f  __aeabi_idiv0                 
+0000cf8f  __aeabi_ldiv0                 
+0000f765  __aeabi_memclr                
+0000f765  __aeabi_memclr4               
+0000f765  __aeabi_memclr8               
+0000f403  __aeabi_memcpy                
+0000f403  __aeabi_memcpy4               
+0000f403  __aeabi_memcpy8               
+0000f767  __aeabi_memset                
+0000f767  __aeabi_memset4               
+0000f767  __aeabi_memset8               
+0000fc77  __aeabi_ui2d                  
+0000f539  __aeabi_uldivmod              
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+2000fe00  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+0000fc15  _c_int00_noargs               
+00010473  _ctypes_                      
+UNDEFED   _system_post_cinit            
+0000fd71  _system_pre_init              
+0000fd75  abort                         
+200016d0  agingOffset                   
+200016d1  alarm1Flag                    
+200016d2  alarm2Flag                    
+20001620  ambientLight                  
+200017b3  appearance                    
+200016d3  appearanceEEPROM              
+0000fa85  atoi                          
+200016a8  bgColor                       
+200016d4  bgColorEEPROM                 
+200017b5  bgColorSelected               
+ffffffff  binit                         
+200016d5  bitA1M1                       
+200016d6  bitA1M2                       
+200016d7  bitA1M3                       
+200016d8  bitA1M4                       
+200016d9  bitA2M2                       
+200016da  bitA2M3                       
+200016db  bitA2M4                       
+0000d04d  brightnessControl             
+200016dc  brightnessEEPROM              
+2000180a  brightnessLoad                
+200017bd  btn1Flag                      
+00008361  burstRead                     
+000082d1  burstWrite                    
+200016dd  cancelA1                      
+200016de  cancelA2                      
+20001624  celsius                       
+200016df  century                       
+20001628  circumference                 
+0000e101  clearAll                      
+0000e099  clearDisplay                  
+200016e0  clockSetting                  
+200016e1  clockSettingA1                
+200016e2  clockSettingA2                
+00007efd  convertSpeed                  
+00009929  convertTemp                   
+0000fcb3  copysign                      
+0000fcb3  copysignl                     
+2000162c  countForOdometer              
+20001630  currentEdge                   
+200016aa  currentLocation               
+200016ac  currentLocation2              
+200017c0  currentSelection              
+200016e3  currentSpeedUnitSelection     
+200016e4  currentTempSelection          
+200016e5  customFlag                    
+00010273  dBfs                          
+200016e6  date                          
+200016e7  dateA1                        
+200016e8  dateA2                        
+200017ab  dateScroll                    
+200016e9  day                           
+200016ea  day1                          
+200016eb  day2                          
+200016ec  day3                          
+200016ed  day4                          
+200016ee  day5                          
+200016ef  day6                          
+200016f0  dayA1                         
+200016f1  dayA2                         
+200016f2  dayDateSelectBitA1            
+200016f3  dayDateSelectBitA2            
+200017aa  dayScroll                     
+2000157c  dayString                     
+00004f51  debounceEncoder               
+00008bc9  decode                        
+000095e1  decodeAgingOffset             
+00009469  decodeControl                 
+00008e05  decodeDate                    
+00008ded  decodeDay                     
+00009161  decodeDayDateA1               
+000093b9  decodeDayDateA2               
+0000bc1b  decodeEEPROM                  
+0000bc51  decodeEntry1                  
+0000bc8b  decodeEntry2                  
+0000bcc5  decodeEntry3                  
+0000bcff  decodeEntry4                  
+0000bd55  decodeEntry5                  
+0000bdc1  decodeEntry6                  
+00008ce5  decodeHours                   
+00009035  decodeHoursA1                 
+0000928d  decodeHoursA2                 
+00008c99  decodeMinutes                 
+00008fb9  decodeMinutesA1               
+00009209  decodeMinutesA2               
+00008e81  decodeMonth                   
+0000bf61  decodeOdometer                
+00008c4d  decodeSeconds                 
+00008f47  decodeSecondsA1               
+0000be35  decodeSettings                
+0000954d  decodeStatus                  
+00009625  decodeTemp                    
+00008ef5  decodeYear                    
+20001634  delisle                       
+20001638  deltaCycles                   
+200016f4  digitFlag                     
+200015a0  distCentimeter                
+200015a8  distMilli                     
+00008423  encode                        
+00008ba1  encodeAgingOffset             
+00008b1f  encodeControl                 
+0000861d  encodeDate                    
+000085fd  encodeDay                     
+0000887b  encodeDayDateA1               
+00008a89  encodeDayDateA2               
+0000df51  encodeDigits                  
+0000b4ab  encodeEEPROM                  
+0000b4f1  encodeEntry1                  
+0000b52b  encodeEntry2                  
+0000b569  encodeEntry3                  
+0000b5c5  encodeEntry4                  
+0000b625  encodeEntry5                  
+0000b685  encodeEntry6                  
+00008511  encodeHours                   
+0000877d  encodeHoursA1                 
+00008975  encodeHoursA2                 
+000084c9  encodeMinutes                 
+00008725  encodeMinutesA1               
+00008915  encodeMinutesA2               
+00008657  encodeMonth                   
+0000b7d9  encodeOdometer                
+0000848f  encodeSeconds                 
+000086df  encodeSecondsA1               
+0000b6f1  encodeSettings                
+00008b69  encodeStatus                  
+00008699  encodeYear                    
+0000231d  encoderControl                
+2000163c  encoderCount                  
+000047a5  encoderInitialization         
+200016ae  engageMotor                   
+200016b0  engageMotor2                  
+200016f5  engaged                       
+200016f6  entry1                        
+200016f7  entry2                        
+200016f8  entry3                        
+200016f9  entry4                        
+200016fa  entry5                        
+200016fb  entry6                        
+20001800  errno                         
+20001640  fahrenheit                    
+20001644  feetPerSec                    
+0000b0f1  ferror                        
+0000b0e5  fgetc                         
+0000a9d9  fillmessage                   
+0000b0d3  fputc                         
+0000f925  frexp                         
+0000f925  frexpl                        
+0000f4d1  gpioUltrasonicSetup           
+20001648  hallCurrentEdge               
+2000164c  hallDeltaCycles               
+20001650  hallLastEdge                  
+20001460  hallRollingValues             
+200015b0  hallSum                       
+00006c85  highlightOption               
+200016b2  highlightedColor              
+200016fc  hour1                         
+200016fd  hour2                         
+200016fe  hour3                         
+200016ff  hour4                         
+20001700  hour5                         
+20001701  hour6                         
+20001702  hourScroll                    
+20001703  hours                         
+20001704  hoursA1                       
+20001705  hoursA2                       
+200017ea  i                             
+200017ef  inA                           
+200017f3  inAp                          
+200017f7  inB                           
+200017fb  inBp                          
+200015b8  inchAverage                   
+0000485d  initialization                
+0000d83f  initializeBipolarMotor        
+0000d891  initializeUnipolarMotor       
+0000e545  intSysTickSetup               
+00000000  interruptVectors              
+200017ee  j                             
+20001654  kelvin                        
+20001658  kmPerHour                     
+2000165c  knot                          
+20001660  lastEdge                      
+20001706  lastSecBlink                  
+20001707  lastSeconds                   
+200017e4  lastj                         
+0000f145  ldexp                         
+0000f145  ldexpl                        
+00009b51  loadTestData                  
+000000e5  main                          
+20000000  mainMenu                      
+00005205  mainMenuSetup                 
+200002e9  mainScreen                    
+00005005  mainScreenSetup               
+0000fc97  memccpy                       
+0000f403  memcpy                        
+0000f76d  memset                        
+200017c1  menuState                     
+20001708  meridiem                      
+20001709  meridiemA1                    
+2000170a  meridiemA2                    
+2000170b  meridiemScroll                
+200015c0  meridiemString                
+20001664  metersPerSec                  
+200015c8  micro                         
+20001668  milesPerHour                  
+2000170c  minute1                       
+2000170d  minute2                       
+2000170e  minute3                       
+2000170f  minute4                       
+20001710  minute5                       
+20001711  minute6                       
+20001712  minuteScroll                  
+20001713  minutes                       
+20001714  minutesA1                     
+20001715  minutesA2                     
+20001716  month                         
+20001717  month1                        
+20001718  month2                        
+20001719  month3                        
+2000171a  month4                        
+2000171b  month5                        
+2000171c  month6                        
+200017ac  monthScroll                   
+200015d0  monthString                   
+200016b4  moveSteps                     
+200016b6  moveSteps2                    
+0000e573  msDelay                       
+2000171d  newA1F                        
+2000171e  newA1IE                       
+2000171f  newA2F                        
+20001720  newA2IE                       
+20001721  newAgingOffset                
+20001722  newAppearance                 
+20001723  newBBSQW                      
+20001724  newBSY                        
+20001725  newBgColor                    
+20001726  newBitA1M1                    
+20001727  newBitA1M2                    
+20001728  newBitA1M3                    
+20001729  newBitA1M4                    
+2000172a  newBitA2M2                    
+2000172b  newBitA2M3                    
+2000172c  newBitA2M4                    
+2000172d  newBrightness                 
+2000172e  newCONV                       
+2000172f  newCentury                    
+20001730  newClockSetting               
+20001731  newClockSettingA1             
+20001732  newClockSettingA2             
+20001733  newDate                       
+20001734  newDateA1                     
+20001735  newDateA2                     
+20001736  newDay                        
+20001737  newDay1                       
+20001738  newDay2                       
+20001739  newDay3                       
+2000173a  newDay4                       
+2000173b  newDay5                       
+2000173c  newDay6                       
+2000173d  newDayA1                      
+2000173e  newDayA2                      
+2000173f  newDayDateSelectBitA1         
+20001740  newDayDateSelectBitA2         
+20001741  newEN32kHz                    
+20001742  newEOSC                       
+20001743  newEntry1                     
+20001744  newEntry2                     
+20001745  newEntry3                     
+20001746  newEntry4                     
+20001747  newEntry5                     
+20001748  newEntry6                     
+20001749  newHour1                      
+2000174a  newHour2                      
+2000174b  newHour3                      
+2000174c  newHour4                      
+2000174d  newHour5                      
+2000174e  newHour6                      
+2000174f  newHours                      
+20001750  newHoursA1                    
+20001751  newHoursA2                    
+20001752  newINTCN                      
+20001753  newMeridiem                   
+20001754  newMeridiemA1                 
+20001755  newMeridiemA2                 
+20001756  newMinute1                    
+20001757  newMinute2                    
+20001758  newMinute3                    
+20001759  newMinute4                    
+2000175a  newMinute5                    
+2000175b  newMinute6                    
+2000175c  newMinutes                    
+2000175d  newMinutesA1                  
+2000175e  newMinutesA2                  
+2000175f  newMonth                      
+20001760  newMonth1                     
+20001761  newMonth2                     
+20001762  newMonth3                     
+20001763  newMonth4                     
+20001764  newMonth5                     
+20001765  newMonth6                     
+20001766  newOSF                        
+2000166c  newOdometer                   
+20001767  newRS1                        
+20001768  newRS2                        
+20001769  newSecond1                    
+2000176a  newSecond2                    
+2000176b  newSecond3                    
+2000176c  newSecond4                    
+2000176d  newSecond5                    
+2000176e  newSecond6                    
+2000176f  newSeconds                    
+20001770  newSecondsA1                  
+20001771  newSign                       
+20001772  newSpeedUnits                 
+20001773  newTempUnits                  
+20001774  newTextColor                  
+200016b8  newYear                       
+20001670  newton                        
+20001674  odometer                      
+20001678  odometerRemainder             
+2000167c  oldOdometer                   
+00009e01  parrotdelay                   
+20001808  period                        
+20001775  prevDigitFlag                 
+200017cc  radius                        
+0000f617  readAmbientLighting           
+20001548  readData                      
+0000ba45  readEEPROM                    
+200014e0  readEEPROMData                
+20001680  reaumur                       
+200017bc  refresh                       
+20001684  renkine                       
+00004f7d  resetVariables                
+200015d8  rollingAverage                
+200014a0  rollingValues                 
+20001688  romer                         
+2000168c  rotCount                      
+200015e0  rots                          
+200015e8  rpmRollingAverage             
+0000f4a1  sampleDistance                
+0000f145  scalbn                        
+0000f145  scalbnl                       
+20001776  scrollA1Date                  
+20001777  scrollA1Hour                  
+20001778  scrollA1Meridiem              
+20001779  scrollA1Minute                
+2000177a  scrollA1Second                
+2000177b  scrollA2Date                  
+2000177c  scrollA2Hour                  
+2000177d  scrollA2Meridiem              
+2000177e  scrollA2Minute                
+2000177f  scrollA2Second                
+200017ad  scrollAppearance              
+200017b0  scrollBGColor                 
+200017ae  scrollBrightness              
+20001588  scrollDayString               
+20001594  scrollMonthString             
+200017af  scrollTextColor               
+20001780  scrolling                     
+20001781  second1                       
+20001782  second2                       
+20001783  second3                       
+20001784  second4                       
+20001785  second5                       
+20001786  second6                       
+20001787  seconds                       
+20001788  secondsA1                     
+0000de51  segmentInit                   
+20001789  selectedOption                
+0000e12d  sendAddSPI                    
+2000155c  sendData                      
+0000e155  sendDataSPI                   
+20001514  sendEEPROMData                
+00005cad  setAlarmSetup                 
+200005d2  setAlarmsScreen               
+200008bb  setDateScreen                 
+0000588d  setDateSetup                  
+20000ba4  setPreferencesScreen          
+000062a9  setPreferencesSetup           
+20000e8d  setTimeScreen                 
+00005589  setTimeSetup                  
+0000f4a9  setTrigger                    
+0000f5d1  setupADC                      
+0000cf91  setupBrightnessControl        
+0000cfe3  setupHallEffect               
+00008295  setupI2C                      
+0000dd71  setupSeg                      
+0000f4c7  setupUltrasonicSensor         
+2000178a  sign                          
+200017b8  speed                         
+20001690  speedDisp                     
+200015f0  speedUnit                     
+200017b2  speedUnitSelection            
+2000178b  speedUnitsEEPROM              
+0000fb5d  sprintf                       
+200017e8  stepCount                     
+200017ec  stepCount2                    
+0000fce5  strchr                        
+0000fcfb  strcpy                        
+000096e7  stringDecode                  
+0000970d  stringDecodeDay               
+0000988d  stringDecodeMeridiem          
+000097bd  stringDecodeMonth             
+0000fd0f  strlen                        
+200015f8  sum                           
+0000e529  sysTickSetup                  
+20001694  tempDec                       
+20001698  tempDisp                      
+2000169c  tempLSB                       
+200016a0  tempMSB                       
+200017b1  tempSelection                 
+20001600  tempUnit                      
+2000178c  tempUnitsEEPROM               
+200016a4  temperature                   
+0000c389  testData                      
+20001176  testingScreen                 
+0000685d  testingSetup                  
+200017d2  textColor                     
+2000178d  textColorEEPROM               
+200017b4  textColorSelected             
+200016ba  threeDig                      
+0000d801  timer32Setup1                 
+0000d81f  timer32Setup2                 
+2000178e  tooClose                      
+200016bc  twoDig                        
+2000178f  updateA1Date                  
+20001790  updateA1Hour                  
+20001791  updateA1Meridiem              
+20001792  updateA1Minute                
+20001793  updateA1Second                
+20001794  updateA2Date                  
+20001795  updateA2Hour                  
+20001796  updateA2Meridiem              
+20001797  updateA2Minute                
+20001798  updateAppearance              
+20001799  updateBGColor                 
+2000179a  updateBrightness              
+0000800d  updateColor                   
+000080c9  updateCustomColor             
+2000179b  updateDate                    
+2000179c  updateDay                     
+2000179d  updateHour                    
+0000d8bb  updateLocation                
+000078d9  updateMenuData                
+2000179e  updateMeridiem                
+2000179f  updateMinutes                 
+200017a0  updateMonth                   
+200017a1  updateSpeedUnits              
+0000d939  updateTachometer              
+200017a2  updateTempUnits               
+200017a3  updateTextColor               
+200017a4  updateYear                    
+0000e68d  usDelay                       
+00004839  watchdog_init                 
+0000fd23  wcslen                        
+0000deeb  write                         
+0000b279  writeEEPROM                   
+0000deb3  writeSPI                      
+200017a5  x                             
+200017a6  y                             
+200016be  year                          
+200017a8  yearScroll                    
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  interruptVectors              
+000000e5  main                          
+00000200  __STACK_SIZE                  
+0000231d  encoderControl                
+000047a5  encoderInitialization         
+00004839  watchdog_init                 
+0000485d  initialization                
+00004915  PORT2_IRQHandler              
+00004915  PORT2_IRQHandler              
+00004965  TA0_N_IRQHandler              
+00004965  TA0_N_IRQHandler              
+00004a99  TA3_N_IRQHandler              
+00004a99  TA3_N_IRQHandler              
+00004f51  debounceEncoder               
+00004f7d  resetVariables                
+00005005  mainScreenSetup               
+00005205  mainMenuSetup                 
+00005589  setTimeSetup                  
+0000588d  setDateSetup                  
+00005cad  setAlarmSetup                 
+000062a9  setPreferencesSetup           
+0000685d  testingSetup                  
+00006c85  highlightOption               
+000078d9  updateMenuData                
+00007efd  convertSpeed                  
+0000800d  updateColor                   
+000080c9  updateCustomColor             
+00008295  setupI2C                      
+000082d1  burstWrite                    
+00008361  burstRead                     
+00008423  encode                        
+0000848f  encodeSeconds                 
+000084c9  encodeMinutes                 
+00008511  encodeHours                   
+000085fd  encodeDay                     
+0000861d  encodeDate                    
+00008657  encodeMonth                   
+00008699  encodeYear                    
+000086df  encodeSecondsA1               
+00008725  encodeMinutesA1               
+0000877d  encodeHoursA1                 
+0000887b  encodeDayDateA1               
+00008915  encodeMinutesA2               
+00008975  encodeHoursA2                 
+00008a89  encodeDayDateA2               
+00008b1f  encodeControl                 
+00008b69  encodeStatus                  
+00008ba1  encodeAgingOffset             
+00008bc9  decode                        
+00008c4d  decodeSeconds                 
+00008c99  decodeMinutes                 
+00008ce5  decodeHours                   
+00008ded  decodeDay                     
+00008e05  decodeDate                    
+00008e81  decodeMonth                   
+00008ef5  decodeYear                    
+00008f47  decodeSecondsA1               
+00008fb9  decodeMinutesA1               
+00009035  decodeHoursA1                 
+00009161  decodeDayDateA1               
+00009209  decodeMinutesA2               
+0000928d  decodeHoursA2                 
+000093b9  decodeDayDateA2               
+00009469  decodeControl                 
+0000954d  decodeStatus                  
+000095e1  decodeAgingOffset             
+00009625  decodeTemp                    
+000096e7  stringDecode                  
+0000970d  stringDecodeDay               
+000097bd  stringDecodeMonth             
+0000988d  stringDecodeMeridiem          
+00009929  convertTemp                   
+00009b51  loadTestData                  
+00009e01  parrotdelay                   
+00009e0f  Delay1ms                      
+00009f9d  ST7735_InitB                  
+00009fbd  ST7735_InitR                  
+0000a0d1  ST7735_DrawPixel              
+0000a12b  ST7735_DrawFastVLine          
+0000a1e9  ST7735_DrawFastHLine          
+0000a2a1  ST7735_FillScreen             
+0000a2e5  ST7735_FillRect               
+0000a3f1  ST7735_Color565               
+0000a425  ST7735_SwapColor              
+0000a455  ST7735_DrawBitmap             
+0000a653  ST7735_DrawCharS              
+0000a7c9  ST7735_DrawChar               
+0000a941  ST7735_DrawString             
+0000a9d9  fillmessage                   
+0000aa1b  ST7735_SetCursor              
+0000aa45  ST7735_OutUDec                
+0000aad1  ST7735_SetRotation            
+0000ab9b  ST7735_InvertDisplay          
+0000abb3  ST7735_PlotClear              
+0000ac0f  ST7735_PlotPoint              
+0000acd5  ST7735_PlotLine               
+0000ae0f  ST7735_PlotPoints             
+0000aee5  ST7735_PlotBar                
+0000af3b  ST7735_PlotdBfs               
+0000af85  ST7735_PlotNext               
+0000af9f  ST7735_PlotNextErase          
+0000afd9  ST7735_OutChar                
+0000b0a1  ST7735_OutString              
+0000b0bf  ST7735_SetTextColor           
+0000b0d3  fputc                         
+0000b0e5  fgetc                         
+0000b0f1  ferror                        
+0000b0ff  Output_Init                   
+0000b10f  Output_Clear                  
+0000b119  Output_Off                    
+0000b121  Output_On                     
+0000b129  Output_Color                  
+0000b171  I2C1_Write                    
+0000b1e7  I2C1_Read                     
+0000b279  writeEEPROM                   
+0000b4ab  encodeEEPROM                  
+0000b4f1  encodeEntry1                  
+0000b52b  encodeEntry2                  
+0000b569  encodeEntry3                  
+0000b5c5  encodeEntry4                  
+0000b625  encodeEntry5                  
+0000b685  encodeEntry6                  
+0000b6f1  encodeSettings                
+0000b7d9  encodeOdometer                
+0000ba45  readEEPROM                    
+0000bc1b  decodeEEPROM                  
+0000bc51  decodeEntry1                  
+0000bc8b  decodeEntry2                  
+0000bcc5  decodeEntry3                  
+0000bcff  decodeEntry4                  
+0000bd55  decodeEntry5                  
+0000bdc1  decodeEntry6                  
+0000be35  decodeSettings                
+0000bf61  decodeOdometer                
+0000c389  testData                      
+0000c541  __TI_printfi                  
+0000cf8f  __aeabi_idiv0                 
+0000cf8f  __aeabi_ldiv0                 
+0000cf91  setupBrightnessControl        
+0000cfe3  setupHallEffect               
+0000d04d  brightnessControl             
+0000d801  timer32Setup1                 
+0000d81f  timer32Setup2                 
+0000d83f  initializeBipolarMotor        
+0000d891  initializeUnipolarMotor       
+0000d8bb  updateLocation                
+0000d939  updateTachometer              
+0000d9b7  T32_INT2_IRQHandler           
+0000d9b7  T32_INT2_IRQHandler           
+0000db9d  T32_INT1_IRQHandler           
+0000db9d  T32_INT1_IRQHandler           
+0000dd71  setupSeg                      
+0000de51  segmentInit                   
+0000deb3  writeSPI                      
+0000deeb  write                         
+0000df51  encodeDigits                  
+0000e099  clearDisplay                  
+0000e101  clearAll                      
+0000e12d  sendAddSPI                    
+0000e155  sendDataSPI                   
+0000e1b1  SystemCoreClockUpdate         
+0000e429  SystemInit                    
+0000e529  sysTickSetup                  
+0000e545  intSysTickSetup               
+0000e573  msDelay                       
+0000e68d  usDelay                       
+0000ebf5  __aeabi_dsub                  
+0000ebff  __aeabi_dadd                  
+0000eee9  __aeabi_ddiv                  
+0000f145  ldexp                         
+0000f145  ldexpl                        
+0000f145  scalbn                        
+0000f145  scalbnl                       
+0000f255  __aeabi_dmul                  
+0000f403  __aeabi_memcpy                
+0000f403  __aeabi_memcpy4               
+0000f403  __aeabi_memcpy8               
+0000f403  memcpy                        
+0000f4a1  sampleDistance                
+0000f4a9  setTrigger                    
+0000f4c7  setupUltrasonicSensor         
+0000f4d1  gpioUltrasonicSetup           
+0000f539  __aeabi_uldivmod              
+0000f5d1  setupADC                      
+0000f617  readAmbientLighting           
+0000f659  __aeabi_cdcmpeq               
+0000f659  __aeabi_cdcmple               
+0000f6df  __aeabi_cdrcmple              
+0000f765  __aeabi_memclr                
+0000f765  __aeabi_memclr4               
+0000f765  __aeabi_memclr8               
+0000f767  __aeabi_memset                
+0000f767  __aeabi_memset4               
+0000f767  __aeabi_memset8               
+0000f76d  memset                        
+0000f84d  __aeabi_d2f                   
+0000f8bb  __TI_decompress_lzss          
+0000f925  frexp                         
+0000f925  frexpl                        
+0000f9df  __TI_ltoa                     
+0000fa85  atoi                          
+0000fad1  __aeabi_d2iz                  
+0000fb19  __TI_auto_init_nobinit_nopinit
+0000fb5d  sprintf                       
+0000fbdb  __aeabi_f2d                   
+0000fc15  _c_int00_noargs               
+0000fc49  __aeabi_i2d                   
+0000fc77  __aeabi_ui2d                  
+0000fc97  memccpy                       
+0000fcb3  copysign                      
+0000fcb3  copysignl                     
+0000fce5  strchr                        
+0000fcfb  strcpy                        
+0000fd0f  strlen                        
+0000fd23  wcslen                        
+0000fd35  __TI_decompress_none          
+0000fd43  Reset_Handler                 
+0000fd4f  ADC14_IRQHandler              
+0000fd4f  AES256_IRQHandler             
+0000fd4f  BusFault_Handler              
+0000fd4f  COMP_E0_IRQHandler            
+0000fd4f  COMP_E1_IRQHandler            
+0000fd4f  CS_IRQHandler                 
+0000fd4f  DMA_ERR_IRQHandler            
+0000fd4f  DMA_INT0_IRQHandler           
+0000fd4f  DMA_INT1_IRQHandler           
+0000fd4f  DMA_INT2_IRQHandler           
+0000fd4f  DMA_INT3_IRQHandler           
+0000fd4f  DebugMon_Handler              
+0000fd4f  Default_Handler               
+0000fd4f  EUSCIA0_IRQHandler            
+0000fd4f  EUSCIA1_IRQHandler            
+0000fd4f  EUSCIA2_IRQHandler            
+0000fd4f  EUSCIA3_IRQHandler            
+0000fd4f  EUSCIB0_IRQHandler            
+0000fd4f  EUSCIB1_IRQHandler            
+0000fd4f  EUSCIB2_IRQHandler            
+0000fd4f  EUSCIB3_IRQHandler            
+0000fd4f  FLCTL_IRQHandler              
+0000fd4f  FPU_IRQHandler                
+0000fd4f  HardFault_Handler             
+0000fd4f  MemManage_Handler             
+0000fd4f  NMI_Handler                   
+0000fd4f  PCM_IRQHandler                
+0000fd4f  PORT1_IRQHandler              
+0000fd4f  PORT3_IRQHandler              
+0000fd4f  PORT4_IRQHandler              
+0000fd4f  PORT5_IRQHandler              
+0000fd4f  PORT6_IRQHandler              
+0000fd4f  PSS_IRQHandler                
+0000fd4f  PendSV_Handler                
+0000fd4f  RTC_C_IRQHandler              
+0000fd4f  SVC_Handler                   
+0000fd4f  SysTick_Handler               
+0000fd4f  T32_INTC_IRQHandler           
+0000fd4f  TA0_0_IRQHandler              
+0000fd4f  TA1_0_IRQHandler              
+0000fd4f  TA1_N_IRQHandler              
+0000fd4f  TA2_0_IRQHandler              
+0000fd4f  TA2_N_IRQHandler              
+0000fd4f  TA3_0_IRQHandler              
+0000fd4f  UsageFault_Handler            
+0000fd4f  WDT_A_IRQHandler              
+0000fd51  __TI_zero_init                
+0000fd69  __aeabi_errno_addr            
+0000fd71  _system_pre_init              
+0000fd75  C$$EXIT                       
+0000fd75  abort                         
+00010273  dBfs                          
+00010473  _ctypes_                      
+000106a8  __TI_Handler_Table_Base       
+000106b4  __TI_Handler_Table_Limit      
+000106c0  __TI_CINIT_Base               
+000106d0  __TI_CINIT_Limit              
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+20000000  mainMenu                      
+200002e9  mainScreen                    
+200005d2  setAlarmsScreen               
+200008bb  setDateScreen                 
+20000ba4  setPreferencesScreen          
+20000e8d  setTimeScreen                 
+20001176  testingScreen                 
+2000145f  A1F                           
+20001460  hallRollingValues             
+200014a0  rollingValues                 
+200014e0  readEEPROMData                
+20001514  sendEEPROMData                
+20001548  readData                      
+2000155c  sendData                      
+20001570  Message                       
+2000157c  dayString                     
+20001588  scrollDayString               
+20001594  scrollMonthString             
+200015a0  distCentimeter                
+200015a8  distMilli                     
+200015b0  hallSum                       
+200015b8  inchAverage                   
+200015c0  meridiemString                
+200015c8  micro                         
+200015d0  monthString                   
+200015d8  rollingAverage                
+200015e0  rots                          
+200015e8  rpmRollingAverage             
+200015f0  speedUnit                     
+200015f8  sum                           
+20001600  tempUnit                      
+2000160c  Messageindex                  
+20001610  X                             
+20001614  Ymax                          
+20001618  Ymin                          
+2000161c  Yrange                        
+20001620  ambientLight                  
+20001624  celsius                       
+20001628  circumference                 
+2000162c  countForOdometer              
+20001630  currentEdge                   
+20001634  delisle                       
+20001638  deltaCycles                   
+2000163c  encoderCount                  
+20001640  fahrenheit                    
+20001644  feetPerSec                    
+20001648  hallCurrentEdge               
+2000164c  hallDeltaCycles               
+20001650  hallLastEdge                  
+20001654  kelvin                        
+20001658  kmPerHour                     
+2000165c  knot                          
+20001660  lastEdge                      
+20001664  metersPerSec                  
+20001668  milesPerHour                  
+2000166c  newOdometer                   
+20001670  newton                        
+20001674  odometer                      
+20001678  odometerRemainder             
+2000167c  oldOdometer                   
+20001680  reaumur                       
+20001684  renkine                       
+20001688  romer                         
+2000168c  rotCount                      
+20001690  speedDisp                     
+20001694  tempDec                       
+20001698  tempDisp                      
+2000169c  tempLSB                       
+200016a0  tempMSB                       
+200016a4  temperature                   
+200016a8  bgColor                       
+200016aa  currentLocation               
+200016ac  currentLocation2              
+200016ae  engageMotor                   
+200016b0  engageMotor2                  
+200016b2  highlightedColor              
+200016b4  moveSteps                     
+200016b6  moveSteps2                    
+200016b8  newYear                       
+200016ba  threeDig                      
+200016bc  twoDig                        
+200016be  year                          
+200016c0  A1IE                          
+200016c1  A2F                           
+200016c2  A2IE                          
+200016c3  BBSQW                         
+200016c4  BSY                           
+200016c5  CCWsteps                      
+200016c6  CCWsteps2                     
+200016c7  CONV                          
+200016c8  CWsteps                       
+200016c9  CWsteps2                      
+200016ca  EN32kHz                       
+200016cb  EOSC                          
+200016cc  INTCN                         
+200016cd  OSF                           
+200016ce  RS1                           
+200016cf  RS2                           
+200016d0  agingOffset                   
+200016d1  alarm1Flag                    
+200016d2  alarm2Flag                    
+200016d3  appearanceEEPROM              
+200016d4  bgColorEEPROM                 
+200016d5  bitA1M1                       
+200016d6  bitA1M2                       
+200016d7  bitA1M3                       
+200016d8  bitA1M4                       
+200016d9  bitA2M2                       
+200016da  bitA2M3                       
+200016db  bitA2M4                       
+200016dc  brightnessEEPROM              
+200016dd  cancelA1                      
+200016de  cancelA2                      
+200016df  century                       
+200016e0  clockSetting                  
+200016e1  clockSettingA1                
+200016e2  clockSettingA2                
+200016e3  currentSpeedUnitSelection     
+200016e4  currentTempSelection          
+200016e5  customFlag                    
+200016e6  date                          
+200016e7  dateA1                        
+200016e8  dateA2                        
+200016e9  day                           
+200016ea  day1                          
+200016eb  day2                          
+200016ec  day3                          
+200016ed  day4                          
+200016ee  day5                          
+200016ef  day6                          
+200016f0  dayA1                         
+200016f1  dayA2                         
+200016f2  dayDateSelectBitA1            
+200016f3  dayDateSelectBitA2            
+200016f4  digitFlag                     
+200016f5  engaged                       
+200016f6  entry1                        
+200016f7  entry2                        
+200016f8  entry3                        
+200016f9  entry4                        
+200016fa  entry5                        
+200016fb  entry6                        
+200016fc  hour1                         
+200016fd  hour2                         
+200016fe  hour3                         
+200016ff  hour4                         
+20001700  hour5                         
+20001701  hour6                         
+20001702  hourScroll                    
+20001703  hours                         
+20001704  hoursA1                       
+20001705  hoursA2                       
+20001706  lastSecBlink                  
+20001707  lastSeconds                   
+20001708  meridiem                      
+20001709  meridiemA1                    
+2000170a  meridiemA2                    
+2000170b  meridiemScroll                
+2000170c  minute1                       
+2000170d  minute2                       
+2000170e  minute3                       
+2000170f  minute4                       
+20001710  minute5                       
+20001711  minute6                       
+20001712  minuteScroll                  
+20001713  minutes                       
+20001714  minutesA1                     
+20001715  minutesA2                     
+20001716  month                         
+20001717  month1                        
+20001718  month2                        
+20001719  month3                        
+2000171a  month4                        
+2000171b  month5                        
+2000171c  month6                        
+2000171d  newA1F                        
+2000171e  newA1IE                       
+2000171f  newA2F                        
+20001720  newA2IE                       
+20001721  newAgingOffset                
+20001722  newAppearance                 
+20001723  newBBSQW                      
+20001724  newBSY                        
+20001725  newBgColor                    
+20001726  newBitA1M1                    
+20001727  newBitA1M2                    
+20001728  newBitA1M3                    
+20001729  newBitA1M4                    
+2000172a  newBitA2M2                    
+2000172b  newBitA2M3                    
+2000172c  newBitA2M4                    
+2000172d  newBrightness                 
+2000172e  newCONV                       
+2000172f  newCentury                    
+20001730  newClockSetting               
+20001731  newClockSettingA1             
+20001732  newClockSettingA2             
+20001733  newDate                       
+20001734  newDateA1                     
+20001735  newDateA2                     
+20001736  newDay                        
+20001737  newDay1                       
+20001738  newDay2                       
+20001739  newDay3                       
+2000173a  newDay4                       
+2000173b  newDay5                       
+2000173c  newDay6                       
+2000173d  newDayA1                      
+2000173e  newDayA2                      
+2000173f  newDayDateSelectBitA1         
+20001740  newDayDateSelectBitA2         
+20001741  newEN32kHz                    
+20001742  newEOSC                       
+20001743  newEntry1                     
+20001744  newEntry2                     
+20001745  newEntry3                     
+20001746  newEntry4                     
+20001747  newEntry5                     
+20001748  newEntry6                     
+20001749  newHour1                      
+2000174a  newHour2                      
+2000174b  newHour3                      
+2000174c  newHour4                      
+2000174d  newHour5                      
+2000174e  newHour6                      
+2000174f  newHours                      
+20001750  newHoursA1                    
+20001751  newHoursA2                    
+20001752  newINTCN                      
+20001753  newMeridiem                   
+20001754  newMeridiemA1                 
+20001755  newMeridiemA2                 
+20001756  newMinute1                    
+20001757  newMinute2                    
+20001758  newMinute3                    
+20001759  newMinute4                    
+2000175a  newMinute5                    
+2000175b  newMinute6                    
+2000175c  newMinutes                    
+2000175d  newMinutesA1                  
+2000175e  newMinutesA2                  
+2000175f  newMonth                      
+20001760  newMonth1                     
+20001761  newMonth2                     
+20001762  newMonth3                     
+20001763  newMonth4                     
+20001764  newMonth5                     
+20001765  newMonth6                     
+20001766  newOSF                        
+20001767  newRS1                        
+20001768  newRS2                        
+20001769  newSecond1                    
+2000176a  newSecond2                    
+2000176b  newSecond3                    
+2000176c  newSecond4                    
+2000176d  newSecond5                    
+2000176e  newSecond6                    
+2000176f  newSeconds                    
+20001770  newSecondsA1                  
+20001771  newSign                       
+20001772  newSpeedUnits                 
+20001773  newTempUnits                  
+20001774  newTextColor                  
+20001775  prevDigitFlag                 
+20001776  scrollA1Date                  
+20001777  scrollA1Hour                  
+20001778  scrollA1Meridiem              
+20001779  scrollA1Minute                
+2000177a  scrollA1Second                
+2000177b  scrollA2Date                  
+2000177c  scrollA2Hour                  
+2000177d  scrollA2Meridiem              
+2000177e  scrollA2Minute                
+2000177f  scrollA2Second                
+20001780  scrolling                     
+20001781  second1                       
+20001782  second2                       
+20001783  second3                       
+20001784  second4                       
+20001785  second5                       
+20001786  second6                       
+20001787  seconds                       
+20001788  secondsA1                     
+20001789  selectedOption                
+2000178a  sign                          
+2000178b  speedUnitsEEPROM              
+2000178c  tempUnitsEEPROM               
+2000178d  textColorEEPROM               
+2000178e  tooClose                      
+2000178f  updateA1Date                  
+20001790  updateA1Hour                  
+20001791  updateA1Meridiem              
+20001792  updateA1Minute                
+20001793  updateA1Second                
+20001794  updateA2Date                  
+20001795  updateA2Hour                  
+20001796  updateA2Meridiem              
+20001797  updateA2Minute                
+20001798  updateAppearance              
+20001799  updateBGColor                 
+2000179a  updateBrightness              
+2000179b  updateDate                    
+2000179c  updateDay                     
+2000179d  updateHour                    
+2000179e  updateMeridiem                
+2000179f  updateMinutes                 
+200017a0  updateMonth                   
+200017a1  updateSpeedUnits              
+200017a2  updateTempUnits               
+200017a3  updateTextColor               
+200017a4  updateYear                    
+200017a5  x                             
+200017a6  y                             
+200017a8  yearScroll                    
+200017aa  dayScroll                     
+200017ab  dateScroll                    
+200017ac  monthScroll                   
+200017ad  scrollAppearance              
+200017ae  scrollBrightness              
+200017af  scrollTextColor               
+200017b0  scrollBGColor                 
+200017b1  tempSelection                 
+200017b2  speedUnitSelection            
+200017b3  appearance                    
+200017b4  textColorSelected             
+200017b5  bgColorSelected               
+200017b8  speed                         
+200017bc  refresh                       
+200017bd  btn1Flag                      
+200017be  CWflag                        
+200017bf  CCWflag                       
+200017c0  currentSelection              
+200017c1  menuState                     
+200017c4  CW                            
+200017c8  CCW                           
+200017cc  radius                        
+200017d2  textColor                     
+200017d4  StX                           
+200017d8  StY                           
+200017dc  StTextColor                   
+200017e4  lastj                         
+200017e8  stepCount                     
+200017ea  i                             
+200017ec  stepCount2                    
+200017ee  j                             
+200017ef  inA                           
+200017f3  inAp                          
+200017f7  inB                           
+200017fb  inBp                          
+20001800  errno                         
+20001804  SystemCoreClock               
+20001808  period                        
+2000180a  brightnessLoad                
+2000fe00  __stack                       
+20010000  __STACK_END                   
+4000480c  WDTCTL_SYM                    
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[641 symbols]
